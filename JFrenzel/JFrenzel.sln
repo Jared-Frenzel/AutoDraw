@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JFrenzel", "JFrenzel\JFrenzel.csproj", "{D144137D-E5A3-4BEF-A189-4955C6A9877E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataModels", "DataModels\DataModels.csproj", "{D7280EAA-313A-405E-841D-22F2BC188F85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D144137D-E5A3-4BEF-A189-4955C6A9877E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D144137D-E5A3-4BEF-A189-4955C6A9877E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D144137D-E5A3-4BEF-A189-4955C6A9877E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D144137D-E5A3-4BEF-A189-4955C6A9877E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7280EAA-313A-405E-841D-22F2BC188F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7280EAA-313A-405E-841D-22F2BC188F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7280EAA-313A-405E-841D-22F2BC188F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7280EAA-313A-405E-841D-22F2BC188F85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

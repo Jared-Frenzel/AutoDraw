@@ -1,0 +1,20 @@
+﻿@model JFrenzel.Areas.DrawBot.Models.ImageSubmissionIdexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+//https://www.aurigma.com/upload-suite/developers/aspnet-mvc/how-to-upload-files-in-aspnet-mvc
+<h2>Select an image to upload!</h2>
+@using (Html.BeginForm("Index",
+															"ImageSubmission",
+															FormMethod.Post,
+															new { enctype = "multipart/form-data" }))
+{
+	<label for="file">Upload Image:</label>
+		<input type="file" name="file" id="file" /><br><br>
+		<input type="submit" value="Upload Image" />
+		<br><br>
+		@ViewBag.Message
+}
