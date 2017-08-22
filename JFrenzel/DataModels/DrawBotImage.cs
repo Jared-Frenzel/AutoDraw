@@ -7,9 +7,9 @@
 		public int Height { get; set; }
 		public int Width { get; set; }
 
-		public int[,] RedChannel { get; set; }
-		public int[,] GreenChannel { get; set; }
-		public int[,] BlueChannel { get; set; }
+		public string RedChannel { get; set; }
+		public string GreenChannel { get; set; }
+		public string BlueChannel { get; set; }
 
 	}
 }

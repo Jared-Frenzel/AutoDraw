@@ -1,23 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.IO;
+﻿using DataModels;
+using JFrenzel.Interfaces;
+using System;
 using System.Drawing;
+using System.Text;
+using System.Web;
 using System.Web.Mvc;
-
-using JFrenzel.Areas.DrawBot.Models;
 
 namespace JFrenzel.Areas.DrawBot.Controllers
 {
-    public class ImageSubmissionController : Controller
-    {
-        // GET: DrawBot/ImageSubmission
-				[HttpGet]
-        public ActionResult Index()
-        {
-            return View();
-        }
+	public class ImageSubmissionController : Controller
+	{
+		readonly log4net.ILog logger = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+		private IEFStore<DrawBotImage> dbImageStore;
+
+		public ImageSubmissionController(IEFStore<DrawBotImage> dbImageStore)
+		{
+			this.dbImageStore = dbImageStore;
+		}
+
+		// GET: DrawBot/ImageSubmission
+		[HttpGet]
+		public ActionResult Index()
+		{
+			return View();
+		}
 
 		//https://www.aurigma.com/upload-suite/developers/aspnet-mvc/how-to-upload-files-in-aspnet-mvc
 		// POST: DrawBot/ImageSubmission
@@ -27,21 +34,17 @@ namespace JFrenzel.Areas.DrawBot.Controllers
 			if (file != null && file.ContentLength > 0)
 				try
 				{
-					//Save the img on the local file system
-					string path = Path.Combine(Server.MapPath("~/Images"),
-																			Path.GetFileName(file.FileName));
-					file.SaveAs(path);
-
-					//Create a asp image from the file, and convert it to the DrawBot image format. Store in DB as well
-					Bitmap img = new Bitmap(Image.FromFile(path));
+					//Create an image from the file, and convert it to the DrawBot image format. Store in DB as well
+					Bitmap img = new Bitmap(Image.FromStream(file.InputStream));
 
 					DrawBotImage dbImage = new DrawBotImage();
 					dbImage.Height = img.Height;
 					dbImage.Width = img.Width;
 
-					dbImage.RedChannel = new int[dbImage.Width, dbImage.Height];
-					dbImage.GreenChannel = new int[dbImage.Width, dbImage.Height];
-					dbImage.BlueChannel = new int[dbImage.Width, dbImage.Height];
+					//Each channel is stored as a string of chars (0-255)
+					StringBuilder RedBuilder = new StringBuilder();
+					StringBuilder GreenBuilder = new StringBuilder();
+					StringBuilder BlueBuilder = new StringBuilder();
 
 					for (int x = 0; x < dbImage.Width; x++)
 					{
@@ -49,21 +52,29 @@ namespace JFrenzel.Areas.DrawBot.Controllers
 						{
 							Color px = img.GetPixel(x, y);
 
-							dbImage.RedChannel[x, y] = px.R;
-							dbImage.BlueChannel[x, y] = px.B;
-							dbImage.GreenChannel[x, y] = px.G;
+							RedBuilder.Append((char)px.R);
+							BlueBuilder.Append((char)px.B);
+							GreenBuilder.Append((char)px.G);
 						}
 					}
 
+					dbImage.RedChannel = RedBuilder.ToString();
+					dbImage.GreenChannel = GreenBuilder.ToString();
+					dbImage.BlueChannel = BlueBuilder.ToString();
+
+					dbImage = this.dbImageStore.Create(dbImage);
+
+					//TODO: Put some verification in here.
 					ViewBag.Message = "File uploaded successfully";
 				}
-				catch(OutOfMemoryException ex)
+				catch (OutOfMemoryException ex)
 				{
 					ViewBag.Message = "Error: You uploaded an unsupported file type. Please uplad a BMP, GIF, JPEG, PNG, or TIFF file.";
 				}
 				catch (Exception ex)
 				{
-					ViewBag.Message = "ERROR:" + ex.Message.ToString();
+					logger.Error("ImageSubmissionController: Error occured while converting submitted file to DrawBotImage; Error Message: " + ex.Message);
+					throw new Exception("ImageSubmissionController: Error occured while converting submitted file to DrawBotImage", ex);
 				}
 			else
 			{
@@ -72,5 +83,5 @@ namespace JFrenzel.Areas.DrawBot.Controllers
 
 			return View();
 		}
-    }
+	}
 }

@@ -236,9 +236,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\DrawBot\Controllers\ImageSubmissionController.cs" />
     <Compile Include="Areas\DrawBot\DrawBotAreaRegistration.cs" />
-    <Compile Include="Areas\DrawBot\Implementations\DrawBotImageStore.cs" />
-    <Compile Include="Areas\DrawBot\Implementations\EFStore.cs" />
-    <Compile Include="Areas\DrawBot\Interfaces\IDrawBotImageStore.cs" />
     <Compile Include="Areas\DrawBot\ViewModels\ImageSubmissionViewModel.cs" />
     <Compile Include="Areas\DrawBot\ViewModels\ManageViewModels.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -247,9 +244,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Implementations\DefaultEFStore.cs" />
+    <Compile Include="Interfaces\IEFStore.cs" />
     <Compile Include="Migrations\201708080244271_init.cs" />
     <Compile Include="Migrations\201708080244271_init.Designer.cs">
       <DependentUpon>201708080244271_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708220030574_DrawBotImage.cs" />
+    <Compile Include="Migrations\201708220030574_DrawBotImage.Designer.cs">
+      <DependentUpon>201708220030574_DrawBotImage.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -341,6 +344,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\DrawBot\Implementations\" />
+    <Folder Include="Areas\DrawBot\Interfaces\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
@@ -352,6 +357,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708080244271_init.resx">
       <DependentUpon>201708080244271_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708220030574_DrawBotImage.resx">
+      <DependentUpon>201708220030574_DrawBotImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

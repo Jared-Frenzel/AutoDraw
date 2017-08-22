@@ -1,0 +1,2 @@
+ERROR 2017-08-21 17:14:18,784 22037ms DefaultEFStore`1       .ctor              - EFStore: Error occured when trying to create store implementation for enity object of type DataModels.DrawBotImage. Required DbSet was not included in application context.
+ERROR 2017-08-21 17:16:50,139 173391ms DefaultEFStore`1       .ctor              - EFStore: Error occured when trying to create store implementation for enity object of type DataModels.DrawBotImage. Required DbSet was not included in application context.
