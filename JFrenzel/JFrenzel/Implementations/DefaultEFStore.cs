@@ -64,7 +64,7 @@ namespace JFrenzel.Implementations
 				}
 				catch (Exception e)
 				{
-					logger.Error("EFStore: Error while finding T with Id " + Id + "; Exception Message: " + e.Message);
+					logger.Error("EFStore: Error while finding T with Id " + Id + "; Exception Message: " + e.StackTrace);
 				}
 			}
 
@@ -83,7 +83,7 @@ namespace JFrenzel.Implementations
 			}
 			catch (Exception e)
 			{
-				logger.Error("EFStore: Error while returning list of T; Exception Message: " + e.Message);
+				logger.Error("EFStore: Error while returning list of T; Exception Message: " + e.StackTrace);
 				return null;
 			}
 		}
@@ -105,7 +105,7 @@ namespace JFrenzel.Implementations
 			}
 			catch (Exception e)
 			{
-				logger.Error("EFStore: Error while creating T " + obj.ToString() + "; Exception Message: " + e.Message);
+				logger.Error("EFStore: Error while creating T " + obj.ToString() + "; Exception Message: " + e.StackTrace);
 				return null;
 			}
 		}
@@ -127,7 +127,7 @@ namespace JFrenzel.Implementations
 			}
 			catch (Exception e)
 			{
-				logger.Error("EFStore: Error while creating T " + obj.ToString() + "; Exception Message: " + e.Message);
+				logger.Error("EFStore: Error while creating T " + obj.ToString() + "; Exception Message: " + e.StackTrace);
 				return false;
 			}
 		}

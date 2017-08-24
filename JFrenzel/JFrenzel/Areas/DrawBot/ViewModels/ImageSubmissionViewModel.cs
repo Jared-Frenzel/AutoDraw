@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace JFrenzel.Areas.DrawBot.Models
+﻿namespace JFrenzel.Areas.DrawBot.ViewModels
 {
-	public class ImageSubmissionIdexViewModel
+	public class ImageSubmissionIndexViewModel
 	{
-		public int foo { get; set; }
+
+	}
+
+	public class ImageSubmissionPreviewViewModel
+	{
+		public int OriginalId { get; set; }
 	}
 }

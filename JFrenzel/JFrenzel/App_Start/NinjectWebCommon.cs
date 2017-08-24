@@ -3,6 +3,8 @@
 
 namespace JFrenzel.App_Start
 {
+	using AutoDraw.Areas.DrawBot.Implementations;
+	using AutoDraw.Areas.DrawBot.Interfaces;
 	using JFrenzel.Implementations;
 	using JFrenzel.Interfaces;
 	using Microsoft.Web.Infrastructure.DynamicModuleHelper;
@@ -45,6 +47,7 @@ namespace JFrenzel.App_Start
 				kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
 				kernel.Bind(typeof(IEFStore<>)).To(typeof(DefaultEFStore<>));
 				kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+				kernel.Bind<IImageTransformHelper>().To<ImageTransformHelper>();
 
 				RegisterServices(kernel);
 				return kernel;

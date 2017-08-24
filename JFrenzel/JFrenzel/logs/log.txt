@@ -1,2 +1,94 @@
 ERROR 2017-08-21 17:14:18,784 22037ms DefaultEFStore`1       .ctor              - EFStore: Error occured when trying to create store implementation for enity object of type DataModels.DrawBotImage. Required DbSet was not included in application context.
 ERROR 2017-08-21 17:16:50,139 173391ms DefaultEFStore`1       .ctor              - EFStore: Error occured when trying to create store implementation for enity object of type DataModels.DrawBotImage. Required DbSet was not included in application context.
+ERROR 2017-08-23 00:12:56,602 109207ms geSubmissionController Index              - ImageSubmissionController: Error occured while converting submitted file to DrawBotImage; Error Message: A generic error occurred in GDI+.
+ERROR 2017-08-23 00:21:49,618  2973ms geSubmissionController Index              - ImageSubmissionController: Error occured while converting submitted file to DrawBotImage; Error Message: A generic error occurred in GDI+.
+ERROR 2017-08-23 00:24:12,616  2878ms geSubmissionController Index              - ImageSubmissionController: Error occured while converting submitted file to DrawBotImage; Error Message: A generic error occurred in GDI+.
+ERROR 2017-08-23 00:28:01,966 14296ms geSubmissionController Index              - ImageSubmissionController: Error occured while converting submitted file to DrawBotImage; Error Message: A generic error occurred in GDI+.
+ERROR 2017-08-23 00:34:07,998  5887ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 2; Exception Message: Exception has been thrown by the target of an invocation.
+ERROR 2017-08-23 00:35:02,325  6034ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 3; Exception Message: Exception has been thrown by the target of an invocation.
+ERROR 2017-08-23 00:42:58,024  4141ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 4; Exception Message: System.Collections.ListDictionaryInternal
+ERROR 2017-08-23 00:43:22,465 28582ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 4; Exception Message: System.Collections.ListDictionaryInternal
+ERROR 2017-08-23 00:44:22,483  3576ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 5; Exception Message: System.Collections.ListDictionaryInternal
+ERROR 2017-08-23 00:44:38,683 19776ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 5; Exception Message: System.Collections.ListDictionaryInternal
+ERROR 2017-08-23 00:47:16,168  3257ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 6; Exception Message:    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Data.Entity.Core.Common.Internal.Materialization.Translator.TranslateColumnMap(Translator translator, Type elementType, ColumnMap columnMap, MetadataWorkspace workspace, SpanIndex spanIndex, MergeOption mergeOption, Boolean streaming, Boolean valueLayer)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlanFactory.Prepare(ObjectContext context, DbQueryCommandTree tree, Type elementType, MergeOption mergeOption, Boolean streaming, Span span, IEnumerable`1 compiledQueryParameters, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at JFrenzel.Implementations.DefaultEFStore`1.FindById(Int32 Id) in C:\Users\Jared Frenzel\Desktop\JFrenzel\JFrenzel\JFrenzel\Implementations\DefaultEFStore.cs:line 63
+ERROR 2017-08-23 00:47:17,584  4672ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 6; Exception Message:    at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Data.Entity.Core.Common.Internal.Materialization.Translator.TranslateColumnMap(Translator translator, Type elementType, ColumnMap columnMap, MetadataWorkspace workspace, SpanIndex spanIndex, MergeOption mergeOption, Boolean streaming, Boolean valueLayer)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlanFactory.Prepare(ObjectContext context, DbQueryCommandTree tree, Type elementType, MergeOption mergeOption, Boolean streaming, Span span, IEnumerable`1 compiledQueryParameters, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at JFrenzel.Implementations.DefaultEFStore`1.FindById(Int32 Id) in C:\Users\Jared Frenzel\Desktop\JFrenzel\JFrenzel\JFrenzel\Implementations\DefaultEFStore.cs:line 63
+ERROR 2017-08-23 23:48:18,142 12183ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 0; Exception Message:    at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at JFrenzel.Implementations.DefaultEFStore`1.FindById(Int32 Id) in C:\Users\Jared Frenzel\Desktop\JFrenzel\JFrenzel\JFrenzel\Implementations\DefaultEFStore.cs:line 63
+ERROR 2017-08-23 23:48:18,142 12183ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 0; Exception Message:    at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at JFrenzel.Implementations.DefaultEFStore`1.FindById(Int32 Id) in C:\Users\Jared Frenzel\Desktop\JFrenzel\JFrenzel\JFrenzel\Implementations\DefaultEFStore.cs:line 63
+ERROR 2017-08-23 23:48:18,142 12183ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 0; Exception Message:    at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at JFrenzel.Implementations.DefaultEFStore`1.FindById(Int32 Id) in C:\Users\Jared Frenzel\Desktop\JFrenzel\JFrenzel\JFrenzel\Implementations\DefaultEFStore.cs:line 63
+ERROR 2017-08-23 23:48:18,142 12183ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 0; Exception Message:    at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at JFrenzel.Implementations.DefaultEFStore`1.FindById(Int32 Id) in C:\Users\Jared Frenzel\Desktop\JFrenzel\JFrenzel\JFrenzel\Implementations\DefaultEFStore.cs:line 63
+ERROR 2017-08-23 23:48:18,143 12183ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 0; Exception Message:    at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at JFrenzel.Implementations.DefaultEFStore`1.FindById(Int32 Id) in C:\Users\Jared Frenzel\Desktop\JFrenzel\JFrenzel\JFrenzel\Implementations\DefaultEFStore.cs:line 63
+ERROR 2017-08-23 23:48:18,143 12183ms DefaultEFStore`1       FindById           - EFStore: Error while finding T with Id 0; Exception Message:    at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__0[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.First[TSource](IQueryable`1 source)
+   at JFrenzel.Implementations.DefaultEFStore`1.FindById(Int32 Id) in C:\Users\Jared Frenzel\Desktop\JFrenzel\JFrenzel\JFrenzel\Implementations\DefaultEFStore.cs:line 63

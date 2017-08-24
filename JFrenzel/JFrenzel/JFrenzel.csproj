@@ -236,8 +236,14 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\DrawBot\Controllers\ImageSubmissionController.cs" />
     <Compile Include="Areas\DrawBot\DrawBotAreaRegistration.cs" />
+    <Compile Include="Areas\DrawBot\Implementations\ImageTransformHelper.cs" />
+    <Compile Include="Areas\DrawBot\Interfaces\IImageTransformHelper.cs" />
     <Compile Include="Areas\DrawBot\ViewModels\ImageSubmissionViewModel.cs" />
-    <Compile Include="Areas\DrawBot\ViewModels\ManageViewModels.cs" />
+    <Compile Include="Migrations\201708230509375_DrawBotFix.cs" />
+    <Compile Include="Migrations\201708230509375_DrawBotFix.Designer.cs">
+      <DependentUpon>201708230509375_DrawBotFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -284,6 +290,7 @@
     <Content Include="Areas\DrawBot\Views\_ViewStart.cshtml" />
     <Content Include="Areas\DrawBot\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\DrawBot\Views\ImageSubmission\Index.cshtml" />
+    <Content Include="Areas\DrawBot\Views\ImageSubmission\Preview.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -344,8 +351,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\DrawBot\Implementations\" />
-    <Folder Include="Areas\DrawBot\Interfaces\" />
+    <Folder Include="Images\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708220030574_DrawBotImage.resx">
       <DependentUpon>201708220030574_DrawBotImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708230509375_DrawBotFix.resx">
+      <DependentUpon>201708230509375_DrawBotFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

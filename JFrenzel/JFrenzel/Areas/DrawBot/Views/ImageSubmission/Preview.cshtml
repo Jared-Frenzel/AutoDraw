@@ -1,0 +1,10 @@
+﻿@using DataModels
+@model JFrenzel.Areas.DrawBot.ViewModels.ImageSubmissionPreviewViewModel
+@{
+    ViewBag.Title = "Preview";
+}
+
+<h2>Preview</h2>
+
+<img src="@Url.Action("GetPreviewImage", new { Id = Model.OriginalId, type = DrawBotImage.TRANSFORM_TYPE.NONE})" />
+<img src="@Url.Action("GetPreviewImage", new { Id = Model.OriginalId, type = DrawBotImage.TRANSFORM_TYPE.EDGE_DETECTION})" />
